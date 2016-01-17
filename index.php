@@ -324,12 +324,17 @@
                         <label for="password">Password</label>
                     </div>
                     <div class="input-field col s12">
-                        <input id="phone" type="number" name="phone" length="12" class="validate input_text" required>
-                        <label for="phone">Phone</label>
+                        <div class="input-field col s2">
+                            <input disabled value="62" id="phonecode" type="number" name="phonecode" class="validate input_text" required>
+                            <label for="phonecode">Phone Code</label>
+                        </div>
+                        <div class="input-field col s10">
+                            <input id="phone" type="number" name="phone" length="11" class="validate input_text" required>
+                            <label for="phone">Phone</label>
+                        </div>
                     </div>
-                    <div class="g-recaptcha col s12" data-sitekey="6LeAkRUTAAAAAJqBhjZT7KK4R2Vu3pp-96wrTfDG"></div>
                 </div>
-
+                <div class="g-recaptcha col s12" data-sitekey="6LeAkRUTAAAAAJqBhjZT7KK4R2Vu3pp-96wrTfDG"></div>
                 <button class="waves-effect waves-light btn right" type="submit">Sign Up</button>
             </form>
         </div>
