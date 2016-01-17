@@ -17,7 +17,7 @@
             height: 400px;
         }
     </style>
-
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 <nav class="white" role="navigation">
@@ -327,7 +327,9 @@
                         <input id="phone" type="number" name="phone" length="12" class="validate input_text" required>
                         <label for="phone">Phone</label>
                     </div>
+                    <div class="g-recaptcha col s12" data-sitekey="6LeAkRUTAAAAAJqBhjZT7KK4R2Vu3pp-96wrTfDG"></div>
                 </div>
+
                 <button class="waves-effect waves-light btn right" type="submit">Sign Up</button>
             </form>
         </div>
