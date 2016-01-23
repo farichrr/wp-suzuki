@@ -33,6 +33,6 @@ window.location.href='home.php';
 } else
     echo "<script>
 alert('Username tidak ada atau password salah');
-window.location.href='index.php';
+window.location.href='index.html';
 </script>";
 ?>
