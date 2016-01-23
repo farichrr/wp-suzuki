@@ -16,6 +16,7 @@
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="font/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 </head>
@@ -26,15 +27,16 @@
         <a id="logo-container" href="index.php" class="brand-logo">Suzuki</a>
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">Sign out</a></li>
+            <li><a href="profile.php">Profile</a></li>
+            <li><a href="logout.php">Sign out</a></li>
         </ul>
         <ul class="right ">
             <div class="nav-wrapper">
 
                 <ul class="right">
-                    <li><a href="sass.html"><i class="material-icons">search</i></a></li>
-                    <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
-                    <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+                    <li><a href="team.php" class="tooltipped" data-position="left" data-delay="50" data-tooltip="Costumer Service Page"><i class="material-icons left">supervisor_account</i></a></li>
+                    <li class="active"><a href="product.php" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Check out our latest  Products"><i class="material-icons left">store</i><span class="new badge">4</span></a></li>
+                    <li><a href="badges.html" class="tooltipped waves-effect waves-light btn" data-position="bottom" data-delay="50" data-tooltip="Costumer Service Page">Book Now</a></li>
                     <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">more_vert</i></a></li>
                 </ul>
             </div>
@@ -42,8 +44,6 @@
 </ul>
 </div>
 </nav>
-<!-- Modal Trigger -->
-<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
 
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
@@ -61,7 +61,7 @@
             <div id="test1" class="col s12 padding">
                 <div class="row">
                     <div class="col s6">
-                            <img class="responsive-img" src="img/d1.png">
+                        <img class="responsive-img" src="img/d1.png">
                         <p><strong>248cm3, liquid-cooled SOHC in-line 2-cylinder engine</strong></p>
                         <p>has user-friendly characteristics in low-to-mid range engine speed to match with a variety of riding conditions.</p>
                     </div>
@@ -170,7 +170,7 @@
                                         <span>Seat Height</span>
                                     </li>
                                 </ul>
-                        </div>
+                            </div>
                             <div class="col s2">
                                 <ul>
                                     <li>
@@ -204,17 +204,17 @@
                                     </li>
                                 </ul>
                             </div>
-                        <div class="col s2">
-                            <ul>
-                                <li>
-                                    <span>183</span>
-                                    <span>KG</span>
-                                </li>
-                                <li>
-                                    <span>Height</span>
-                                </li>
-                            </ul>
-                        </div>
+                            <div class="col s2">
+                                <ul>
+                                    <li>
+                                        <span>183</span>
+                                        <span>KG</span>
+                                    </li>
+                                    <li>
+                                        <span>Height</span>
+                                    </li>
+                                </ul>
+                            </div>
                             <div class="col s2">
                                 <ul>
                                     <li>
@@ -228,13 +228,13 @@
                             </div>
                         </div>
 
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
 
-</div>
     </div>
+</div>
 <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
         <div class="container">
@@ -396,7 +396,10 @@
         <div class="row">
             <div class="col l5 s12">
                 <h5 class="white-text">PT HSMG Malang Pusat</h5>
-                <p class="grey-text text-lighten-4">PT. Hero Sakti Motor Gemilang Malang (Pusat) adalah sebuah dealer kendaraan roda dua dan juga bengkel yang berada di kota Malang, Jawa Timur. PT. Hero Sakti Motor Gemilang merupakan pusat penjualan dan perawatan berkala untuk kendaraan roda dua merk Suzuki di kota Malang, Jawa Timur.</p>
+                <p class="grey-text text-lighten-4">PT. Hero Sakti Motor Gemilang Malang (Pusat) adalah sebuah dealer
+                    kendaraan roda dua dan juga bengkel yang berada di kota Malang, Jawa Timur. PT. Hero Sakti Motor
+                    Gemilang merupakan pusat penjualan dan perawatan berkala untuk kendaraan roda dua merk Suzuki di
+                    kota Malang, Jawa Timur.</p>
 
 
             </div>
@@ -410,10 +413,19 @@
             <div class="col l3 s12">
                 <h5 class="white-text">Connect</h5>
                 <ul>
-                    <a href="https://www.facebook.com/suzukimotorindonesia/?fref=tsv" ><img src="img/fb.png" alt="https://www.facebook.com/suzukimotorindonesia/?fref=ts">
-                    </a></ul>
-                <ul>
-                    <a href="https://www.instagram.com/suzuki_id/" ><img src="img/ig.png" alt="https://www.instagram.com/suzuki_id/"></a>
+                    <li>
+                        <a style="text-decoration: none;" class="white-text"
+                           href="https://www.facebook.com/suzukimotorindonesia/?fref=tsv"><i class="fa fa-facebook-square small"></i>
+                            Facebook
+                        </a>
+
+                    </li>
+                    <li>
+                        <a style="text-decoration: none;" class="white-text"
+                           href="https://www.facebook.com/suzukimotorindonesia/?fref=tsv"><i class="fa fa-instagram small"></i>
+                            Instagram
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -442,14 +454,11 @@
 
 
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a href="contact.html" class="btn-floating btn-large red">
-        <i class="large material-icons">mode_edit</i>
+    <a href="#modal1" class="btn-floating btn-large red">
+        <i class="large material-icons tooltipped" data-position="left" data-delay="50" data-tooltip="Track History Motorcycle by License Plate">search</i>
     </a>
     <ul>
-        <li><a class="btn-floating red"><i class="material-icons">perm_identity</i></a></li>
-        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-        <li><a class="btn-floating blue"><i class="material-icons">perm_identity</i></a></li>
+        <li><a href="mailto:farichrr@gmail.com?Subject=Hello%20Developer" target="_top" class="btn-floating blue"><i class="material-icons tooltipped" data-position="left" data-delay="50" data-tooltip="Contact Developer">perm_identity</i></a></li>
     </ul>
 </div>
 </body>
