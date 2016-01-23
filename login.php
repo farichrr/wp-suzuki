@@ -35,3 +35,4 @@ window.location.href='home.php';
 alert('Username tidak ada atau password salah');
 window.location.href='index.php';
 </script>";
+?>
