@@ -9,7 +9,7 @@
 require_once "connect.php";
 $user= $_POST['username'];
 $pass= $_POST['password'];
-$query = 'SELECT * FROM user';
+$query = "SELECT * FROM user";
 $data = $db->query($query);
 $sukses = 0;
 $row = $data->fetch_assoc();
