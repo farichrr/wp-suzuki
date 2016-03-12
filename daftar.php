@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS  -->
+    <script src="js/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
 <?php
 /**
  * Created by PhpStorm.
@@ -16,15 +27,31 @@
         $password = $_POST['password'];
         $phone = $_POST['phone'];
     $sql = "INSERT INTO user
-VALUES ('$id', '$nama', '$username','$password','$phone')";
+VALUES ('$id', '$nama', '$username',sha1('$password'),'$phone')";
     if (mysqli_query($db, $sql)) {
-        echo "Data Berhasil Disimpan";
-        header("Location: http://localhost:63342/suzuki/index.php"); /* Redirect browser */
-        exit();
-    } else {
-        echo "User anda telah terdaftar";
-        echo '<p><a href="index.php">Daftar Ulang</a>';
-    }
+          echo "<script>
+                swal({
+                title: \"Sukses!\",
+                text: \"Pendaftaran Pengguna Berhasil\",
+                type: \"success\"
+            },
+            function () {
+                window.location.href = 'index.php';
+            });
+            </script>";
+        
+              } else
+            echo "<script>
+        swal({
+            title: \"Gagal!\",
+            text: \"Ktp telah terdaftar\",
+            type: \"error\"
+        },
+        function () {
+            window.location.href = 'index.php';
+        });
+        </script>";
+    
 
 mysqli_close($db);
 

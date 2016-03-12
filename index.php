@@ -8,22 +8,28 @@
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="font/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-    <style>
+    <script src="js/sweetalert.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+    
+    <style> 
         #map {
             width: 100%;
             height: 400px;
         }
     </style>
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
+
 <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-        <a href="index.php"><img class="img-rounded" src="img/logo.png" alt="suzuki.png"></a>
-        <a id="logo-container" href="index.php" class="brand-logo">Suzuki</a>
+        <a href="index.php"><img class="img-rounded brand-logo" src="img/logo.png" alt="suzuki.png"></a>
+        <!--<a id="logo-container" href="index.php" class="brand-logo">Suzuki</a>-->
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="#!">one</a></li>
@@ -31,11 +37,15 @@
             <li class="divider"></li>
             <li><a href="#!">three</a></li>
         </ul>
-        <ul class="right ">
-
-            <li><a href="#modal1" class="modal-trigger">Login</a></li>
-            <li><a href="#modal2" class="modal-trigger waves-effect waves-light btn">Sign Up</a></li>
-        </ul>
+            <ul id="slide-out" class="side-nav right">
+                <li><a href="#modal1" class="modal-trigger">Login</a></li>
+                <li><a href="#modal2" class="modal-trigger waves-effect waves-light btn">Sign Up</a></li>   
+            </ul>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#modal1" class="modal-trigger">Login</a></li>
+                <li><a href="#modal2" class="modal-trigger waves-effect waves-light btn">Sign Up</a></li>
+            </ul>
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
     </div>
 </nav>
 
@@ -58,7 +68,7 @@
 
         </div>
     </div>
-    <div class="parallax"><img src="img/bg6.png" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img class="img-responsive" src="img/bg6.png" alt="Unsplashed background img 1"></div>
 </div>
 
 
@@ -76,8 +86,8 @@
                         suku cadang asli suzuki untuk kendaraan anda dan kami juga menyediakan servis dengan booking
                         untuk konsumen agar waktu servis dapat lebih maksimal serta dapat
                         menjadikan waktu anda menjadi lebih produktif.</p>
-                    <a href="" class="waves-effect waves-light btn"><i class=" material-icons right">input</i>Book
-                        Now</a>
+                    <a class="btn" onclick="Materialize.toast('Harap Login Terlebih dahulu', 4000,'rounded')">
+                        <i class="material-icons right">input</i>Book Now</a>
                 </div>
             </div>
 
@@ -92,7 +102,7 @@
                         produk-produk kami serta prosedur pembelian semua motor suzuki
                         di dealer kami baik cash maupun kredit.</p>
                     <br>
-                    <a href="product.php" class="waves-effect waves-light btn"><i
+                    <a href="product_1.php" class="waves-effect waves-light btn"><i
                             class="material-icons right">search</i>Our Product</a>
                 </div>
             </div>
@@ -108,7 +118,7 @@
                         hubungi kami untuk layanan yang cepat dan efisien efisien efisien efisien efisien efisien
                         efisien efisien efisien efisien efisien efisien.
                     </p>
-                    <a href="team.php" class="waves-effect waves-light btn"><i class="material-icons right">send</i>Contact
+                    <a href="team.html" class="waves-effect waves-light btn"><i class="material-icons right">send</i>Contact
                         Us</a>
                 </div>
             </div>
@@ -126,7 +136,7 @@
             </div>
         </div>
     </div>
-    <div class="parallax"><img src="img/bg4.png" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img class="img-responsive" src="img/bg4.png" alt="Unsplashed background img 2"></div>
 </div>
 
 <div class="container">
@@ -138,34 +148,43 @@
                 <h4>Our Location</h4>
                 <div id="map"></div>
 
-                <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-    <script>
+                <script>
+function initMap() {
+  var myLatlng = {lat: -7.9673911, lng: 112.633494};
 
-        var map = L.map('map').setView([-7.9673911, 112.633494], 19);
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 16,
+    center: myLatlng
+  });
 
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
-            maxZoom: 21,
-            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-            id: 'mapbox.streets'
-        }).addTo(map);
+  var marker = new google.maps.Marker({
+    position: myLatlng,
+    animation:google.maps.Animation.BOUNCE,
+    map: map,
+    title: 'Click to zoom'
+  });
 
+  map.addListener('center_changed', function() {
+    // 3 seconds after the center of the map has changed, pan back to the
+    // marker.
+    window.setTimeout(function() {
+      map.panTo(marker.getPosition());
+    }, 3000);
+  });
 
-        L.marker([-7.9673911, 112.633494]).addTo(map)
-            .bindPopup("<b>HSMG Malang</b><br />Come!").openPopup();
+  marker.addListener('click', function() {
+    map.setZoom(19);
+    map.setCenter(marker.getPosition());
+  });
+    var infowindow = new google.maps.InfoWindow({
+  content:"HSMG Malang Come!"
+  });
 
-        var popup = L.popup();
+infowindow.open(map,marker);
+}
 
-        function onMapClick(e) {
-            popup
-                .setLatLng(e.latlng)
-                .setContent("You clicked the map at " + e.latlng.toString())
-                .openOn(map);
-        }
-
-        map.on('click', onMapClick);
-
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOnchancvaUlaDwG-DYyTeq2wMuzEx9kU&signed_in=true&callback=initMap" async defer>
     </script>
             </div>
         </div>
@@ -182,7 +201,7 @@
             </div>
         </div>
     </div>
-    <div class="parallax"><img src="img/bg8.png" alt="Unsplashed background img 3"></div>
+    <div class="parallax"><img class="img-responsive" src="img/bg8.png" alt="Unsplashed background img 3"></div>
 </div>
 
 <footer class="page-footer teal">
@@ -237,14 +256,14 @@
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a href="contact.html" class="btn-floating btn-large red">
-        <i class="large material-icons">mode_edit</i>
+    <a href="#modal4" class="btn-floating btn-large red modal-trigger">
+        <i class="large material-icons tooltipped" data-position="left" data-delay="50" data-tooltip="Track History Motorcycle by License Plate">search</i>
     </a>
     <ul>
-        <li><a class="btn-floating red"><i class="material-icons">perm_identity</i></a></li>
-        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-        <li><a class="btn-floating blue"><i class="material-icons">perm_identity</i></a></li>
+        <li><a href="mailto:farichrr@gmail.com?Subject=Hello%20Developer" target="_top" class="btn-floating blue"><i class="material-icons tooltipped" data-position="left" data-delay="50" data-tooltip="Contact Developer">perm_identity</i></a></li>
+        <li><a href="#modal5" target="_top" class="btn-floating green modal-trigger">
+                <i class="material-icons tooltipped" data-position="left" data-delay="50" data-tooltip="Estimasi Kredit">view_list</i>
+            </a></li>
     </ul>
 </div>
 
@@ -253,49 +272,31 @@
     <div class="modal-content">
         <h4>Login</h4>
         <div class="row">
-            <form class="col s12">
+            <form class="col s12" method="post" action="login.php">
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="icon_prefix" type="text" class="validate">
-                        <label for="icon_prefix">First Name</label>
+                        <input name="username" id="icon_prefix" type="text" class="validate" required >
+                        <label for="icon_prefix">Username</label>
                     </div>
                     <div class="input-field col s6">
                         <i class="material-icons prefix">lock</i>
-                        <input id="icon_telephone" type="password" class="validate">
+                        <input id="icon_telephone" type="password" class="validate" name="password" required>
                         <label for="icon_telephone">Password</label>
                     </div>
+                    
+                    
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="waves-effect waves-green right btn">Login</button>
+                    
+                        <a href="resetpass.php" class=" waves-effect waves-green btn-flat">Reset Password</a>
+                    
                 </div>
             </form>
         </div>
     </div>
-    <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Login</a>
-    </div>
-</div><!-- Modal Structure -->
-<div id="modal1" class="modal">
-    <div class="modal-content">
-        <h4>Login</h4>
-        <div class="row">
-            <form class="col s12" method="post" action="">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="icon_prefix" type="text" class="validate">
-                        <label for="icon_prefix">First Name</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">lock</i>
-                        <input id="icon_telephone" type="password" class="validate">
-                        <label for="icon_telephone">Password</label>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Login</a>
-    </div>
+    
 </div>
 
 <!-- Modal Structure -->
@@ -314,8 +315,8 @@
                         <label for="nama">Nama</label>
                     </div>
                     <div class="input-field col s12">
-                        <input id="username" type="text" class="validate" size="30" name="username" required>
-                        <label for="username">Username</label>
+                        <input id="username" type="text" class="validate" name="username" required>
+                        <label for="Username">Username</label>
                     </div>
                 </div>
                 <div class="row">
@@ -326,7 +327,7 @@
                     <div class="input-field col s12">
                         <input id="phone" type="number" name="phone" length="12" class="validate input_text" required>
                         <label for="phone">Phone</label>
-                    </div>
+                    </div><br>
                     <div class="g-recaptcha col s12" data-sitekey="6LeAkRUTAAAAAJqBhjZT7KK4R2Vu3pp-96wrTfDG"></div>
                 </div>
 
@@ -338,6 +339,74 @@
 
     </div>
 </div>
+    
+    <!-- Modal Structure -->
+<div id="modal5" class="modal">
+    <div class="modal-content">
+        <h4>Simulasi Kredit</h4>
+        <div class="row">
+            <form class="col s12" action="simulasikredit.php" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="dp" type="number" class="validate" size="30" name="dp" autofocus required>
+                        <label for="dp">Uang Muka</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <select class="icons" name="produk">
+                            <optgroup label="Sport">
+                                <option  value="50000000" data-icon="img/c1.png" class="left circle">Inazuma 250</option>
+                                <option  value="18000000" data-icon="img/sport2.png" class="left circle">Thunder 125</option>
+                            </optgroup>
+                            <optgroup label="Underbone">
+                                <option  value="21500000" data-icon="img/sm.png" class="left circle">Satria F150 GP</option>
+                                <option  value="21000000" data-icon="img/s11.png" class="left circle">Satria F150 SE</option>
+                                <option  value="19500000" data-icon="img/s3.png" class="left circle">Satria F150 S</option>
+                                <option  value="18800000" data-icon="img/s2.png" class="left circle">Satria F150</option>
+                            </optgroup>
+                            <optgroup label="Matic">
+                                <option  value="15000000" data-icon="img/s5.png" class="left circle">Address 115 GP</option>
+                            </optgroup>
+                             <optgroup label="Cub">
+                                <option  value="17000000" data-icon="img/sy2.png" class="left circle">Satria F115 GP</option>
+                            </optgroup>
+                        </select>
+                            <label>Pilih Produk</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <select name="tahun">
+                                <option value="12">1 Tahun</option>
+                                <option value="24">2 Tahun</option>
+                                <option value="36">3 Tahun</option>
+                        </select>
+                            <label>Pilih Tahun</label>
+                    </div>                    
+                <button class="waves-effect waves-light btn right" type="submit">Kalkulasi</button>
+                </div>
+        </form>       
+    </div>
+</div>
+    </div>    
+<!-- Modal Structure -->
+<div id="modal4" class="modal">
+    <div class="modal-content">
+        <h4>Cari Track Record Motor dengan plat nomor</h4>
+        <div class="row">
+            <form class="col s12" method="post" action="cari_motor.php">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">label_outline</i>
+                        <input name="nopol" id="nopol" type="text" class="validate" required >
+                        <label for="nopol">No Polisi</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn waves-effect waves-light" type="submit"><i class="material-icons right">search</i>Cari</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script>$(document).ready(function () {
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal-trigger').leanModal();
@@ -345,6 +414,15 @@
 <script>$(document).ready(function () {
         $('input#input_text, textarea#textarea1').characterCounter();
     });</script>
+    <script>
+        // Initialize collapse button
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();
+    </script>
+    <script>$(document).ready(function() {
+    $('select').material_select();
+  });</script>
 
 </body>
 </html>
