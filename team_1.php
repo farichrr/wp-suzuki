@@ -1,12 +1,3 @@
-<?php
-    session_start();
-if( !isset($_SESSION["nama"]) ){
-    header("location:index.php");
-    exit();
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,49 +8,46 @@ if( !isset($_SESSION["nama"]) ){
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="font/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    
-     <link href="js/compressed/themes/default.time.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="js/compressed/themes/default.date.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="js/compressed/themes/default.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="font/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+    
+    
 </head>
 <body>
 <nav class="white" role="navigation">
     <div class="nav-wrapper container">
         
-        <a id="logo-container" href="#" class="brand-logo"><img  class="img-rounded" src="img/logo.png" alt="suzuki.png"></a>
-        <ul>
+        <a id="logo-container" href="index.php" class="brand-logo"><img class="img-rounded" src="img/logo.png" alt="suzuki.png"></a>
+        <!-- Dropdown Structure -->
                 <div class="nav-wrapper">
-
-            <ul id="slide-out" class="side-nav right">
-                <li class="active"><a href="team.php" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Costumer Service Page"><i class="material-icons left">supervisor_account</i>Costumer Service</a></li>
-                <li><a href="product.php" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Check out our latest  Products"><i class="material-icons left">store</i><span class="new badge">4</span></a></li>
-                <li><a href="home.php" class="tooltipped waves-effect waves-light" data-position="right" data-delay="50" data-tooltip="Booking Service"><i class="material-icons left">receipt</i>Book Now</a></li>
-                <li><a href="profile.php" class="tooltipped waves-effect waves-light" data-position="right" data-delay="50" data-tooltip="Profile User"><i class="material-icons left">perm_identity</i>Profile</a></li>
-                <li><a href="logout.php" class="tooltipped waves-effect waves-light" data-position="right" data-delay="50" data-tooltip="Logout"><i class="material-icons left">settings</i>Logout</a></li>
-            </ul>
-            <ul class="right hide-on-med-and-down">
-                <li class="active"><a href="team.php" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Costumer Service Page"><i class="material-icons left">supervisor_account</i>Costumer Service</a></li>
-                <li><a href="product.php" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Check out our latest  Products"><i class="material-icons left">store</i><span class="new badge">4</span></a></li>
-                <li><a href="home.php" class="tooltipped waves-effect waves-light" data-position="bottom" data-delay="50" data-tooltip="Booking Service"><i class="material-icons left">receipt</i>Book Now</a></li>
-                <li><a href="profile.php" class="tooltipped waves-effect waves-light" data-position="bottom" data-delay="50" data-tooltip="Profile User"><i class="material-icons left">perm_identity</i>Profile</a></li>
-                <li><a href="logout.php" class="tooltipped waves-effect waves-light" data-position="bottom" data-delay="50" data-tooltip="Logout"><i class="material-icons left">settings</i>Logout</a></li>
-            </ul>
-                <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                    <ul id="slide-out" class="side-nav right">
+                        <li><a href="#modal1" class="modal-trigger">Login</a></li>
+                        <li><a href="#modal2" class="modal-trigger waves-effect waves-light btn">Sign Up</a></li>   
+                    </ul>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#modal1" class="modal-trigger">Login</a></li>
+                        <li><a href="#modal2" class="modal-trigger waves-effect waves-light btn">Sign Up</a></li>
+                    </ul>
+                        <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
                 </div>
-            </ul>
     </div>
-</nav>
-
-
-   <div class="section">
+            </nav>
+    <div class="section">
         <div class="container">
             <div class="row">
             <br><br>
             <h1 class="header center teal-text text-darken-3">Costumers Satisfaction Team</h1>
-                        <div class="card col s3 m3 ">
+                        <div class="card col m3 ">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator" src="img/cs8.png">
                             </div>
@@ -75,7 +63,7 @@ if( !isset($_SESSION["nama"]) ){
                                             <div class="card-image waves-effect waves-block waves-light">
                             </div>
             </div>
-             <div class="card col s3 m3 ">
+             <div class="card col m3 ">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator" src="img/cs4.png">
                             </div>
@@ -90,7 +78,7 @@ if( !isset($_SESSION["nama"]) ){
                                             <div class="card-image waves-effect waves-block waves-light">
                             </div>
             </div>
-                <div class="card col s3 m3 ">
+                <div class="card col m3 ">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator" src="img/cs6.png">
                             </div>
@@ -105,7 +93,7 @@ if( !isset($_SESSION["nama"]) ){
                                             <div class="card-image waves-effect waves-block waves-light">
                             </div>
             </div>
-                <div class="card col s3 m3 ">
+                <div class="card col m3 ">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator" src="img/cs5.png">
                             </div>
@@ -436,106 +424,23 @@ if( !isset($_SESSION["nama"]) ){
         </div>
     </div>
 </div>
-     <!-- Modal Structure -->
-<div id="modal8" class="modal">
-    <div class="modal-content">
-        <h4>Book Servis</h4>
-        <div class="row">
-            <form class="col s12" method="post" action="book.php">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input name="nama" type="text" class="validate"  value="<?php echo $_SESSION['nama'];?>" readonly>
-                        <label>Nama</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input type="text" class="validate" name="nopol" placeholder="N4444AA"  required>
-                        <label>Nomor Polisi</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <select name="servis">
-                            <option value="50000"selected>Servis Rutin</option>
-                            <option value="0">Free Service 1000Km</option>
-                            <option value="0">Free Service 4000Km</option>
-                            <option value="0">Free Service 8000Km</option>
-                            <option value="0">Free Service 12000Km</option>
-                            <option value="40000">Tune Up Motor Matic</option>
-                            <option value="40000">Tune Up Motor Bebek</option>
-                            <option value="50000">Tune Up Motor Sport</option>
-                        </select>
-                        <label>Servis</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <select name="sparepart" multiple>
-                            <option value="0"  selected>Tidak Ganti Sparepart</option>
-                            <option value="40000">Ganti Oli (matic,bebek,sport)</option>
-                            <option value="20000">Ganti Busi (matic,bebek)</option>
-                            <option value="35000">Ganti Busi(sport)</option>
-                            <option value="35000">Ganti Filter Udara</option>
-                            <option value="35000">Ganti Oli Transmisi(matic)</option>
-                            <option value="40000">Ganti kampas rem depan</option>
-                            <option value="30000">Ganti kampas rem belakang</option>
-                        </select>
-                        <label>Ganti Sparepart</label>
-                    </div>
-                    <div class="input-field col s12">
-                    
-                    <input name="jam" class="timepicker" type="text" placeholder="Jam Service">
-                        <label>Jam Servis</label>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" class="waves-effect waves-green right btn">Book</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-    
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/compressed/picker.js"></script>
-    <script src="js/compressed/picker.date.js"></script>
-    
-    <script src="js/compressed/picker.time.js"></script>
-<script src="js/materialize.js"></script>
-<script src="js/init.js"></script>
-
-    
-<script>
-    $('.datepicker').pickadate();
-    $('.timepicker').pickatime({
-         min: [8,0],
-         max: [15,0],
-         interval: 15,
-        formatLabel: function(time) {
-    var hours = ( time.pick - this.get('now').pick ) / 60,
-      label = hours < 0 ? ' !hours to now' : hours > 0 ? ' !hours from now' : 'now'
-    return  'h:i a <sm!all>' + ( hours ? Math.abs(hours) : '' ) + label +'</sm!all>'
-  }
-    });
-        
-    $(document).ready(function(){
+<script>$(document).ready(function () {
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal-trigger').leanModal();
-    });
-    
-    $(".button-collapse").sideNav();
-        
-    $(document).ready(function(){
-        $('ul.tabs').tabs();
-    });
-
-    $(document).ready(function() {
-    $('select').material_select();
-    });
-    
-        $(document).ready(function () {
+    });</script>
+<script>$(document).ready(function () {
         $('input#input_text, textarea#textarea1').characterCounter();
-    });
-    
-    
+    });</script>
+    <script>
+        // Initialize collapse button
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();
     </script>
-    
 
 
 </body>
 </html>
+
+
+

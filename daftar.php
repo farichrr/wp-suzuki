@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS  -->
+    <script src="js/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
 <?php
 /**
  * Created by PhpStorm.
@@ -5,30 +16,42 @@
  * Date: 1/16/2016
  * Time: 11:25 AM
  */
-$db = new mysqli('localhost','root','','suzuki');
-if (mysqli_connect_errno()) {
-    echo 'Error!';
-    exit();
-}
-$id = $_POST['ktp'];
-$nama = $_POST['nama'];
-$username = $_POST['username'];
-$password = $_POST['password'];
-$phone = $_POST['phone'];
-$sql = "INSERT INTO user
-VALUES ('$id', '$nama', '$username','$password','$phone')";
-if (mysqli_query($db, $sql)) {
-    echo "<script>
-        alert('Berhasil Login');
-        window.location.href='home.php';
+    $db = new mysqli('localhost','root','','suzuki');
+    if (mysqli_connect_errno()) {
+        echo 'Error!';
+        exit();
+    }
+        $id = $_POST['ktp'];
+        $nama = $_POST['nama'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $phone = $_POST['phone'];
+    $sql = "INSERT INTO user
+VALUES ('$id', '$nama', '$username',sha1('$password'),'$phone')";
+    if (mysqli_query($db, $sql)) {
+          echo "<script>
+                swal({
+                title: \"Sukses!\",
+                text: \"Pendaftaran Pengguna Berhasil\",
+                type: \"success\"
+            },
+            function () {
+                window.location.href = 'index.php';
+            });
+            </script>";
+        
+              } else
+            echo "<script>
+        swal({
+            title: \"Gagal!\",
+            text: \"Ktp telah terdaftar\",
+            type: \"error\"
+        },
+        function () {
+            window.location.href = 'index.php';
+        });
         </script>";
-    exit();
-} else {
-    echo "<script>
-        alert('Username anda telah terdaftar atau password salah');
-        window.location.href='index.php';
-        </script>";
-}
+    
 
 mysqli_close($db);
 
