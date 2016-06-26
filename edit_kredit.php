@@ -20,7 +20,11 @@ if (mysqli_connect_errno()) {
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+<<<<<<< HEAD
     <title>Hero Sakti Motor Gemilang Website By Materialize</title>
+=======
+    <title>Parallax Template - Materialize</title>
+>>>>>>> origin/master
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -28,6 +32,10 @@ if (mysqli_connect_errno()) {
 
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="font/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+<<<<<<< HEAD
+=======
+    <link rel="stylesheet"
+>>>>>>> origin/master
     </head>
 <body>
     <div class="container">
