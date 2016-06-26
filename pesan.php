@@ -26,12 +26,12 @@ session_start();
 <body>
     <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content">
-        
+
         <li><a href="signout.php">Sign Out</a></li>
     </ul>
     <!-- Dropdown Structure -->
     <ul id="dropdown2" class="dropdown-content">
-        
+
         <li><a href="signout.php">Sign Out</a></li>
     </ul>
     <nav class="white   ">
@@ -40,10 +40,10 @@ session_start();
         
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="menuservis.php"><i class="material-icons right">store</i>Menu Jasa Servis</a></li>
+         <li><a href="menuservis.php"><i class="material-icons right">store</i>Menu Jasa Servis</a></li>
         
-        <li class="active"><a href="menuuser.php"><i class="material-icons right">assignment_ind</i>Menu User</a></li>
-        <li><a href="pesan.php"><i class="material-icons right">markunread_mailbox</i>Pesan</a></li>
+        <li><a href="menuuser.php"><i class="material-icons right">assignment_ind</i>Menu User</a></li>
+        <li class="active"><a href="pesan.php"><i class="material-icons right">markunread_mailbox</i>Pesan</a></li>
         <!-- Dropdown Trigger -->
       <li><a class="dropdown-button" href="#!" data-activates="dropdown2"><i class="material-icons">more_vert</i></a></li>
           
@@ -51,59 +51,16 @@ session_start();
         <ul class="side-nav" id="mobile-demo">
         <li><a href="menuservis.php"><i class="material-icons right">store</i>Menu Jasa Servis</a></li>
         
-        <li class="active"><a href="menuuser.php"><i class="material-icons left">assignment_ind</i>Menu User</a></li>
-        <li><a href="pesan.php"><i class="material-icons left">markunread_mailbox</i>Pesan</a></li>
+        <li><a href="menuuser.php"><i class="material-icons left">assignment_ind</i>Menu User</a></li>
+        <li class="active"><a href="pesan.php"><i class="material-icons left">markunread_mailbox</i>Pesan</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons left">more_vert</i>Settings</a></li>
       </ul>
     </div>
         </nav>
          
    <div class="container">
-       <ul class="collapsible popout" data-collapsible="accordion">
-    <li>
-      <div class="collapsible-header"><i class="material-icons">description</i>Lihat User</div>
-      <div class="collapsible-body">
-          <p>Menu untuk melihat Semua user yang terdaftar.</p>
-        <p><a href="#modal2" class="btn-large modal-trigger">Lihat User<i class="material-icons right">description</i></a></p>
-        </div>
-    </li>
-        <li>
-      <div class="collapsible-header"><i class="material-icons">delete</i>Hapus User</div>
-      <div class="collapsible-body">
-          <p>Menu untuk menghapus User berdasarkan No ktp.</p>
-          <div class="container">
-          <p><form action="hapus_user.php" method="post">
-                   <div class="input-field col s12">
-                        <select name="ktp">
-                        <?php
-                            $konek = mysqli_connect("localhost","root","","suzuki");
-                            $query = "select ktp from user";
-                            $hasil = mysqli_query($konek,$query);
-                            if (mysqli_num_rows($hasil) > 0) {
-                            while($data=mysqli_fetch_array($hasil)){
-                                echo "<option value=$data[ktp]>$data[ktp]</option>";
-                            }
-                                }else{
-                                echo "<option value=0>Data Ktp User tidak ada</option>";
-                            }       
-                        ?>
-                        </select>
-                        <label>No Ktp User</label>
-                    </div>
-                    <button type="submit" class="btn">Hapus<i class="material-icons right">delete</i></button>
-             </form>
-                   </p>
-          </div>
-    </li>
-  </ul>
-        </div>
+       
     
-    </div>
-    
-    <!-- Modal Structure -->
-<div id="modal2" class="modal">
-    <div class="modal-content">
-        <h4>User</h4>
         <div class="row">
             <form class="col s12">
                 <div class="row">
@@ -111,30 +68,35 @@ session_start();
                         <table class="highlight centered">
         <thead>
           <tr>
-              <th data-field="ktp" rowspan="2">Ktp</th>
+              <th data-field="pegawai" rowspan="2">Pegawai</th>
               <th data-field="nama" rowspan="2">Nama</th>
-              <th data-field="username" rowspan="2">Username</th>
-              <th data-field="password" rowspan="2">Password</th>
-              <th data-field="phone" rowspan="2">Phone</th>
+              <th data-field="email" rowspan="2">Email</th>
+              <th data-field="pesan">Pesan</th>
+              <th data-field="tanggal">Tanggal</th>
           </tr>
         </thead>
 
         <tbody>
             <?php
                 require_once "connect.php";
-    
-                $sql = "SELECT * FROM user";
-                $result = mysqli_query($db, $sql);
-
+                
+                if ($_SESSION['username']=='admin'){
+                    $sql = "SELECT * FROM pesan";
+                } else {
+                    $sql = "SELECT * FROM pesan where pegawai='".$_SESSION['username']."'";
+                }
+                    
+                    $result = mysqli_query($db, $sql);
+                    
             if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
         echo "<tr>
-            <td>".@$row['ktp']."</td>  
+            <td>".@$row['pegawai']."</td>  
             <td>".@$row['nama']."</td>
-            <td>".@$row['username']."</td>
-            <td>".sha1(@$row['password'])."</td>
-            <td>".@$row['phone']."</td>
+            <td><a href='mailto:".@$row['email']."'>".@$row['email']."</td>
+            <td>".@$row['pertanyaan']."</td>
+            <td>".@$row['tanggal']."</td>
             </tr>";
     }
 } else {
@@ -146,7 +108,7 @@ session_start();
                 </div>
             </div>
         </form>
-    
+       </div>
 </div>
 <!--  Scripts-->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

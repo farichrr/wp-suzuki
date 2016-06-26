@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
     require_once "rupiah.php";
     $id_kredit = $_POST['id_kredit'];
     $_SESSION['id_kredit']=$id_kredit;
-    $check = "SELECT * FROM kredit WHERE id_kredit = '".$id_kredit."'";
+    $check = "SELECT * FROM detail_book WHERE id_book = '".$_SESSION['id_book']."'";
     
     $result = $db->query($check);
     $num = $result->num_rows;

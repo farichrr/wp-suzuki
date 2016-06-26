@@ -180,14 +180,7 @@ if( !isset($_SESSION["nama"]) ){
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
-<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a href="#modal7" class="btn-floating btn-large red modal-trigger">
-        <i class="large material-icons tooltipped" data-position="left" data-delay="50" data-tooltip="Track History Motorcycle by License Plate">search</i>
-    </a>
-    <ul>
-        <li><a href="mailto:farichrr@gmail.com?Subject=Hello%20Developer" target="_top" class="btn-floating blue"><i class="material-icons tooltipped" data-position="left" data-delay="50" data-tooltip="Contact Developer">perm_identity</i></a></li>
-    </ul>
-</div>
+
 
 <!-- Modal Structure -->
 <div id="modal1" class="modal">

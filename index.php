@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <title>Parallax Template - Materialize</title>
+    <title>Hero Sakti Motor Gemilang Website By Materialize</title>
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -115,10 +115,9 @@
                     <p class="light">Pelayanan pelanggan memberikan aspek Reliabilitas dengan informasi produk-produk
                         kami yang akurat didukung dengan pelayanan yang
                         responsif serta rasa kepedulian sebagai bentuk apresiasi kepada seluruh costumer suzuki.
-                        hubungi kami untuk layanan yang cepat dan efisien efisien efisien efisien efisien efisien
-                        efisien efisien efisien efisien efisien efisien.
+                        hubungi kami untuk layanan yang cepat dan efisien. Serta dengan jangkauan dimanapun dan kapanpun untuk menunjang konsumen.
                     </p>
-                    <a href="team.html" class="waves-effect waves-light btn"><i class="material-icons right">send</i>Contact
+                    <a href="team_1.php" class="waves-effect waves-light btn"><i class="material-icons right">send</i>Contact
                         Us</a>
                 </div>
             </div>

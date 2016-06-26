@@ -4,14 +4,13 @@ if (mysqli_connect_errno()) {
     echo 'Error!';
     exit();
     }
-    session_start();
-    $nopol = $_POST['nopol'];
-    $check = "SELECT * FROM kendaraan WHERE nopol = '".$nopol."'";
+    session_start();    
+    $id_sparepart = $_POST['id_sparepart'];
+    $check = "SELECT nama_sparepart, harga_sparepart FROM sparepart where id_sparepart = '".$id_sparepart."'";
     $result = $db->query($check);
     $num = $result->num_rows;
     $data = mysqli_query($db,$check);
-    $row=mysqli_fetch_row($data);
-
+    $row=mysqli_fetch_assoc($data);
 ?>
 <html>
     <head>
@@ -33,27 +32,29 @@ if (mysqli_connect_errno()) {
     </head>
 <body>
     <div class="container">
-    <form method="POST" action="update_motor.php" class="col s12">
+        <form method="post" action="update_sparepart.php">
             <?php
-            echo "<h1> update data kendaraan </h1> "
+            echo "<h1> Update Jasa Servis </h1> "
             ?>
                 <div class="row">
+                
                     <div class="input-field col s12">
-                        <input value="<?php echo $row[0];?>" id="nopol" type="text" class="validate" name="nopol" length="30" readonly>
-                        <label class="active" for="nama_kendaraan">No Polisi</label>
+                        <input value="<?php echo $id_sparepart;?>" id="id_sparepart" type="text" class="validate" name="id_sparepart" readonly>
+                        <label class="active" for="id_sparepart">ID. Sparepart</label>
                     </div>
                     <div class="input-field col s12">
-                        <input value="<?php echo $row[2];?>" id="nama_kendaraan" type="text" class="validate" name="nama_kendaraan" length="30">
-                        <label class="active" for="jenis_kendaraan">Nama Kendaraan</label>
-                    </div>        
+                        <input value="<?php echo $row['nama_sparepart'];?>" id="nama_sparepart" type="text" class="validate" name="nama_sparepart">
+                        <label class="active" for="nama_sparepart">Nama Sparepart</label>
+                    </div>
                     <div class="input-field col s12">
-                        <input value="<?php echo $row[3];?>" id="jenis_kendaraan" type="text" class="validate" name="jenis_kendaraan" length="30">
-                        <label class="active" for="jenis_kendaraan">Jenis Kendaraan</label>
-                    </div>        
+                        <input value="<?php echo $row['harga_sparepart'];?>" id="harga_sparepart" type="text" class="validate" name="harga_sparepart">
+                        <label class="active" for="harga_sparepart">Harga Sparepart</label>
+                    </div>
+                
+                    <a href="menuservis.php" class="btn btn-flat waves-effect">Kembali</a>
+                    <button class="btn waves-effect waves-teal" type="submit">Update</button>
                 </div>
-                    <a href="profile.php" class="btn btn-flat waves-effect waves-teal">Kembali</a>
-                    <button class="btn btn-flat waves-effect" type="submit">Update Data</button>
-        </form>
+            </form>
         </div>
     
     </body>

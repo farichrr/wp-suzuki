@@ -363,13 +363,13 @@
         <div class="row">
             <div class="col s12">
                 <ul class="tabs">
-                    <li class="tab col s3"><a class="active" href="#fitur">Feature</a></li>
-                    <li class="tab col s3"><a href="#test2">Gallery</a></li>
-                    <li class="tab col s3"><a href="#test3">Color</a></li>
-                    <li class="tab col s3"><a href="#test4">Spesification</a></li>
+                    <li class="tab col s3"><a class="active" href="#thunder1">Feature</a></li>
+                    <li class="tab col s3"><a href="#thunder2">Gallery</a></li>
+                    <li class="tab col s3"><a href="#thunder3">Color</a></li>
+                    <li class="tab col s3"><a href="#thunder4">Spesification</a></li>
                 </ul>
             </div>
-            <div id="fitur" class="col s12 padding">
+            <div id="thunder1" class="col s12 padding">
                 <div class="row">
                     <div class="col s6">
                             <img class="responsive-img" src="img/t4.png">
@@ -395,145 +395,68 @@
             </div>
             
          </div>
-         <div id="test2" class="col s12 padding">
+         <div id="thunder2" class="col s12 padding">
                 <div class="row">
                     <div class="col s6">
-                        <img class="responsive-img" src="img/g1.png">
+                        <img class="responsive-img" src="img/t1.png">
                     </div>
                     <div class="col s6">
-                        <img class="responsive-img" src="img/g2.png">
+                        <img class="responsive-img" src="img/t4.PNG">
                     </div>
                     <div class="col s6">
-                        <img class="responsive-img" src="img/g3.png">
+                        <img class="responsive-img" src="img/t5.png">
                     </div>
                     <div class="col s6">
-                        <img class="responsive-img" src="img/g4.png">
+                        <img class="responsive-img" src="img/t6.png">
                     </div>
                     <div class="col s6">
-                        <img class="responsive-img" src="img/g5.png">
-                    </div>
-                    <div class="col s6">
-                        <img class="responsive-img" src="img/g6.png">
-                    </div>
-                    <div class="col s6">
-                        <img class="responsive-img" src="img/g7.png">
+                        <img class="responsive-img" src="img/t7.png">
                     </div>
                 </div>
             </div>
-         
-    </div>
-</div>
-    
-<!-- Modal Structure -->
-<div id="modal6" class="modal">
-    <div class="modal-content">
-        <h4>Spesifikasi Satria F150</h4>
-        <div class="row">
-            <div class="col s12">
-                <ul class="tabs">
-                    <li class="tab col s3"><a class="active" href="#test1">Feature</a></li>
-                    <li class="tab col s3"><a href="#test2">Gallery</a></li>
-                    <li class="tab col s3"><a href="#test3">Color</a></li>
-                    <li class="tab col s3"><a href="#test4">Spesification</a></li>
-                </ul>
-            </div>
-            <div id="test1" class="col s12 padding">
+         <div id="thunder3" class="col s12 padding">
                 <div class="row">
                     <div class="col s6">
-                            <img class="responsive-img" src="img/d1.png">
-                        <p><strong>248cm3, liquid-cooled SOHC in-line 2-cylinder engine</strong></p>
-                        <p>has user-friendly characteristics in low-to-mid range engine speed to match with a variety of riding conditions.</p>
+                        <img class="responsive-img" src="img/t1.png">
                     </div>
                     <div class="col s6">
-                        <img class="responsive-img" src="img/d2.png">
-                        <p><strong>The multi-function instrumentation</strong></p>
-                        <p>displays a variety of information. In the centre, there is large analogue tachometer with convenient digital gear position indicator. It’s flanked by a digital LCD speedometer, odometer, twin trip meter, clock and fuel gauge readouts, maintenance interval indicator and adjustable rpm indicator on the right, plus LED indicators on the left.</p>
-                    </div>
-                    <div class="col s6">
-                        <img class="responsive-img" src="img/d3.png">
-                        <p><strong>Fuel Injection system</strong></p>
-                        <p>electronically controls the fuel volume and the injection timing to the optimum values according to the riding condition, based on information from various sensors, in order to improve fuel economy and reduce emission. This also contributes to improved idling stability and almost linear throttle response, and makes for stable performance.</p>
-                    </div>
-                    <div class="col s6">
-                        <img class="responsive-img" src="img/d4.png">
-                        <p><strong>Athletic Chassis</strong></p>
-                        <p>The INAZUMA’s semi double-cradle chassis is designed to provide ample support for a variety of riding styles, while humbly securing this naked bike’s more visible and prominent features. </p>
-                    </div>
-                </div>
-            </div>
-            <div id="test2" class="col s12 padding">
-                <div class="row">
-                    <div class="col s6">
-                        <img class="responsive-img" src="img/g1.png">
-                    </div>
-                    <div class="col s6">
-                        <img class="responsive-img" src="img/g2.png">
-                    </div>
-                    <div class="col s6">
-                        <img class="responsive-img" src="img/g3.png">
-                    </div>
-                    <div class="col s6">
-                        <img class="responsive-img" src="img/g4.png">
-                    </div>
-                    <div class="col s6">
-                        <img class="responsive-img" src="img/g5.png">
-                    </div>
-                    <div class="col s6">
-                        <img class="responsive-img" src="img/g6.png">
-                    </div>
-                    <div class="col s6">
-                        <img class="responsive-img" src="img/g7.png">
-                    </div>
-                </div>
-            </div>
-            <div id="test3" class="col s12 padding">
-                <div class="row">
-                    <div class="col s12">
-                        <img class="responsive-img" src="img/c1.png">
+                        <img class="responsive-img" src="img/t2.png">
                     </div>
                     <div class="col s12">
-                        <img class="responsive-img" src="img/c2.png">
+                        <img class="responsive-img" src="img/t3.png">
                     </div>
                 </div>
             </div>
-            <div id="test4" class="col s12 padding">
+         <div id="thunder4" class="col s12 padding">
                 <div class="row">
                     <div class="col s12">
                         <table>
                             <tr>
-                                <th colspan="2"><h4>Inazuma 250 Spesification</h4></th>
+                                <th colspan="2"><h4>Thunder 125 Spesification</h4></th>
                             </tr>
                             <tr>
                                 <th>Engine</th>
-                                <td>TWIN-CYLINDER, 4-STROKE, SOHC, LIQUID-COOLED</td>
+                                <td>4-STROKE, SOHC</td>
                             </tr>
                             <tr>
                                 <th>Starter</th>
-                                <td>ELECTRIC</td>
+                                <td>ELECTRIC &amp; Manual</td>
                             </tr>
                             <tr>
                                 <th>Transmission</th>
-                                <td>6-SPEED CONSTANT MESH</td>
-                            </tr>
-                            <tr>
-                                <th>Front Suspension</th>
-                                <td>37MM KYB TELESCOPIC FORKS, COIL SPRING, OIL DAMPED</td>
-                            </tr>
-                            <tr>
-                                <th>Rear Suspension</th>
-                                <td>SWINGARM TYPE, KYB COIL SPRING, OIL DAMPED WITH ADJUSTABLE S</td>
+                                <td>5-SPEED CONSTANT MESH</td>
                             </tr>
                             <tr>
                                 <th>Front Brakes</th>
-                                <td>NISSIN TWIN-PISTON CALIPER, 290MM DISC</td>
+                                <td>Cakram</td>
                             </tr>
                             <tr>
                                 <th>Rear Brakes</th>
-                                <td>NISSIN SINGLE-PISTON CALIPER, 240MM DISC</td>
+                                <td>Tromol</td>
                             </tr>
                             <tr>
                                 <th>Fuel Capacity</th>
-                                <td>13.3 LITERS</td>
+                                <td>15 LITERS</td>
                             </tr>
                         </table>
                     </div>
@@ -553,7 +476,7 @@
                             <div class="col s2">
                                 <ul>
                                     <li>
-                                        <span>2145</span>
+                                        <span>1970</span>
                                         <span>mm</span>
                                     </li>
                                     <li>
@@ -564,7 +487,7 @@
                             <div class="col s2">
                                 <ul>
                                     <li>
-                                        <span>760</span>
+                                        <span>745</span>
                                         <span>mm</span>
                                     </li>
                                     <li>
@@ -586,18 +509,227 @@
                         <div class="col s2">
                             <ul>
                                 <li>
-                                    <span>183</span>
+                                    <span>130</span>
                                     <span>KG</span>
                                 </li>
                                 <li>
-                                    <span>Height</span>
+                                    <span>Weight</span>
                                 </li>
                             </ul>
                         </div>
                             <div class="col s2">
                                 <ul>
                                     <li>
-                                        <span>1430</span>
+                                        <span>1270</span>
+                                        <span>mm</span>
+                                    </li>
+                                    <li>
+                                        <span>Wheelbase</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- Modal Structure -->
+<div id="modal6" class="modal">
+    <div class="modal-content">
+        <h4>Spesifikasi All New Satria F150</h4>
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s3"><a class="active" href="#fi1">Feature</a></li>
+                    <li class="tab col s3"><a href="#fi2">Gallery</a></li>
+                    <li class="tab col s3"><a href="#fi3">Color</a></li>
+                    <li class="tab col s3"><a href="#fi4">Spesification</a></li>
+                </ul>
+            </div>
+            <div id="fi1" class="col s12 padding">
+                <div class="row">
+                    <div class="col s6">
+                            <img class="responsive-img" src="img/fif1.png">
+                        <p><strong>248cm3, liquid-cooled SOHC in-line 2-cylinder engine</strong></p>
+                        <p>has user-friendly characteristics in low-to-mid range engine speed to match with a variety of riding conditions.</p>
+                    </div>
+                    <div class="col s6">
+                        <img class="responsive-img" src="img/fif2.png">
+                        <p><strong>The multi-function instrumentation</strong></p>
+                        <p>displays a variety of information. In the centre, there is large analogue tachometer with convenient digital gear position indicator. It’s flanked by a digital LCD speedometer, odometer, twin trip meter, clock and fuel gauge readouts, maintenance interval indicator and adjustable rpm indicator on the right, plus LED indicators on the left.</p>
+                    </div>
+                    <div class="col s6">
+                        <img class="responsive-img" src="img/fif3.png">
+                        <p><strong>Fuel Injection system</strong></p>
+                        <p>electronically controls the fuel volume and the injection timing to the optimum values according to the riding condition, based on information from various sensors, in order to improve fuel economy and reduce emission. This also contributes to improved idling stability and almost linear throttle response, and makes for stable performance.</p>
+                    </div>
+                    <div class="col s6">
+                        <img class="responsive-img" src="img/fif4.png">
+                        <p><strong>Athletic Chassis</strong></p>
+                        <p>The INAZUMA’s semi double-cradle chassis is designed to provide ample support for a variety of riding styles, while humbly securing this naked bike’s more visible and prominent features. </p>
+                    </div>
+                    <div class="col s6">
+                        <img class="responsive-img" src="img/fif5.png">
+                        <p><strong>Athletic Chassis</strong></p>
+                        <p>The INAZUMA’s semi double-cradle chassis is designed to provide ample support for a variety of riding styles, while humbly securing this naked bike’s more visible and prominent features. </p>
+                    </div>
+                    <div class="col s6">
+                        <img class="responsive-img" src="img/fif6.png">
+                        <p><strong>Athletic Chassis</strong></p>
+                        <p>The INAZUMA’s semi double-cradle chassis is designed to provide ample support for a variety of riding styles, while humbly securing this naked bike’s more visible and prominent features. </p>
+                    </div>
+                </div>
+            </div>
+            <div id="fi2" class="col s12 padding">
+                <div class="row">
+                    <div class="col s12">
+                        <img class="responsive-img" src="img/fi1.PNG">
+                    </div>
+                    <div class="col s6">
+                        <img class="responsive-img" src="img/fif1.PNG">
+                    </div>
+                    <div class="col s6">
+                        <img class="responsive-img" src="img/fif2.PNG">
+                    </div>
+                    <div class="col s6">
+                        <img class="responsive-img" src="img/fif3.PNG">
+                    </div>
+                    <div class="col s6">
+                        <img class="responsive-img" src="img/fif4.PNG">
+                    </div>
+                    <div class="col s6">
+                        <img class="responsive-img" src="img/fif5.PNG">
+                    </div>
+                    <div class="col s6">
+                        <img class="responsive-img" src="img/fif6.PNG">
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="fi3" class="col s12 padding">
+                <div class="row">
+                    <div class="col s12">
+                        <img class="responsive-img" src="img/fi1.PNG">
+                    </div>
+                    <div class="col s12">
+                        <img class="responsive-img" src="img/fi2.png">
+                    </div>
+                    <div class="col s12">
+                        <img class="responsive-img" src="img/fi3.png">
+                    </div>
+                    <div class="col s12">
+                        <img class="responsive-img" src="img/fi4.png">
+                    </div>
+                    <div class="col s12">
+                        <img class="responsive-img" src="img/fi5.png">
+                    </div>
+                </div>
+            </div>
+            <div id="fi4" class="col s12 padding">
+                <div class="row">
+                    <div class="col s12">
+                        <table>
+                            <tr>
+                                <th colspan="2"><h4>All New Satria F150 Spesification</h4></th>
+                            </tr>
+                            <tr>
+                                <th>Engine</th>
+                                <td>TWIN-CYLINDER, 4-STROKE, DOHC, LIQUID-COOLED</td>
+                            </tr>
+                            <tr>
+                                <th>Starter</th>
+                                <td>1 PUSH ELECTRIC STARTER</td>
+                            </tr>
+                            <tr>
+                                <th>Transmission</th>
+                                <td>6-SPEED CONSTANT MESH</td>
+                            </tr>
+                            <tr>
+                                <th>Front Suspension</th>
+                                <td>Teleskopik, pegas spiral, bantalan oli</td>
+                            </tr>
+                            <tr>
+                                <th>Rear Suspension</th>
+                                <td>Lengan ayun, pegas spiral, bantalan oli</td>
+                            </tr>
+                            <tr>
+                                <th>Front Brakes</th>
+                                <td>New Petal Design Disc Brake</td>
+                            </tr>
+                            <tr>
+                                <th>Rear Brakes</th>
+                                <td>New Petal Design Disc Brake</td>
+                            </tr>
+                            <tr>
+                                <th>Fuel Capacity</th>
+                                <td>4 LITERS</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="col s2">
+                                <ul>
+                                    <li>
+                                        <span>765</span>
+                                        <span>mm</span>
+                                    </li>
+                                    <li>
+                                        <span>Seat Height</span>
+                                    </li>
+                                </ul>
+                        </div>
+                            <div class="col s2">
+                                <ul>
+                                    <li>
+                                        <span>1960</span>
+                                        <span>mm</span>
+                                    </li>
+                                    <li>
+                                        <span>Length</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col s2">
+                                <ul>
+                                    <li>
+                                        <span>675</span>
+                                        <span>mm</span>
+                                    </li>
+                                    <li>
+                                        <span>Width</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col s2">
+                                <ul>
+                                    <li>
+                                        <span>1280</span>
+                                        <span>mm</span>
+                                    </li>
+                                    <li>
+                                        <span>Height</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        <div class="col s2">
+                            <ul>
+                                <li>
+                                    <span>109</span>
+                                    <span>KG</span>
+                                </li>
+                                <li>
+                                    <span>Weight</span>
+                                </li>
+                            </ul>
+                        </div>
+                            <div class="col s2">
+                                <ul>
+                                    <li>
+                                        <span>1280</span>
                                         <span>mm</span>
                                     </li>
                                     <li>
@@ -614,6 +746,28 @@
 
 </div>
     </div>
+    
+    <!-- Modal Structure -->
+<div id="modal7" class="modal">
+    <div class="modal-content">
+        <h4>Cari Track Record Motor dengan plat nomor</h4>
+        <div class="row">
+            <form class="col s12" method="post" action="cari_motor.php">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">label_outline</i>
+                        <input name="nopol" id="nopol" type="text" class="validate" required >
+                        <label for="nopol">No Polisi</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn waves-effect waves-light" type="submit"><i class="material-icons right">search</i>Cari</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
     
     <div class="section no-pad-bot">
         <div class="container">
@@ -654,66 +808,19 @@
                     <td>
                         <div class="card hoverable">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="img/sy1.png">
+                                <img class="activator" src="img/fi1.PNG">
                             </div>
                             <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">Satria F115<i class="material-icons right">more_vert</i></span>
+                                <span class="card-title activator grey-text text-darken-4">All New Satria F150<i class="material-icons right">more_vert</i></span>
                                 <p><a href="#modal6" class="modal-trigger waves-effect waves-light btn">Detail</a></p>
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Satria F115<i class="material-icons right">close</i></span>
-                                <p class="teal-text text-darken-4">Here is some more information about this product that is only revealed once clicked on.</p>
+                                <span class="card-title grey-text text-darken-4">All New Satria F150<i class="material-icons right">close</i></span>
+                                <p class="teal-text text-darken-4">FROM Rp. 21.650.000,- to 21.950.000, OTR</p>
                             </div>
                         </div>
                 </tr>
                 <tr>
-                    <td>
-                        <div class="card hoverable">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="img/s11.png">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">Satria F150 SE<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#modal1" class="modal-trigger waves-effect waves-light btn">Detail</a></p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Satria F150 SE<i class="material-icons right">close</i></span>
-                                <p class="teal-text text-darken-4">Here is some more information about this product that is only revealed once clicked on.</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="card hoverable">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="img/s2.png">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">Satria F150 S<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#modal1" class="modal-trigger waves-effect waves-light btn">Detail</a></p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Satria F150 S<i class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="card hoverable">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="img/s3.png">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">Satria F150 R<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#modal1" class="modal-trigger waves-effect waves-light btn">Detail</a></p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Satria F150 R<i class="material-icons right">close</i></span>
-                                <p class="teal-text text-darken-4">Here is some more information about this product that is only revealed once clicked on.</p>
-                            </div>
-                        </div>
-                </tr>
-                <tr>
-
                     <td>
                         <div class="card hoverable">
                             <div class="card-image waves-effect waves-block waves-light">
@@ -725,7 +832,7 @@
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Satria F150 MotoGP<i class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                <p>Rp.23.500.000,- OTR.</p>
                             </div>
                         </div>
                     </td>
@@ -740,7 +847,7 @@
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Address MotoGP<i class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                <p>Rp.17.500.000,- OTR.</p>
                             </div>
                         </div>
                     </td>
@@ -755,7 +862,7 @@
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Satria F115 MotoGP<i class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                <p>Rp.18.500.000,- OTR.</p>
                             </div>
                         </div>
                     </td>
@@ -843,7 +950,7 @@
     </script>
     
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a href="#modal1" class="btn-floating btn-large red modal-trigger">
+    <a href="#modal7" class="btn-floating btn-large red modal-trigger">
         <i class="large material-icons tooltipped" data-position="left" data-delay="50" data-tooltip="Track History Motorcycle by License Plate">search</i>
     </a>
     <ul>

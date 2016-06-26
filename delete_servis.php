@@ -9,35 +9,30 @@
 </head>
 <body>
 <?php
-     require_once "connect.php";
+    require_once "connect.php";
     session_start();
-    
-    $id_book = $_POST['id_book'];
-    $status = $_POST['status'];
-    $check = "SELECT * FROM booking WHERE id_book='".$id_book."'";
-    $hasil = mysqli_query($db, $check);
-    $query="UPDATE booking SET 
-    status='".$status."' WHERE id_book = '".$id_book."'";
+    $id_servis = $_POST['id_servis'];
+    $query = "DELETE FROM servis where id_servis = '".$id_servis."'";
     if (mysqli_query($db,$query)) {
               echo "<script>
 swal({
-    title: \"Update Sukses!\",
-    text: \"Update Berhasil\",
+    title: \"Delete Sukses!\",
+    text: \"Delete $id_servis Berhasil\",
     type: \"success\"
 },
 function () {
-    window.location.href = 'profile.php';
+    window.location.href = 'menuservis.php';
 });
 </script>";
     } else {
         echo "<script>
 swal({
     title: \"Gagal!\",
-    text: \"Update Gagal\",
+    text: \"Delete Gagal\",
     type: \"error\"
 },
 function () {
-    window.location.href = 'profile.php';
+    window.location.href = 'menuservis.php';
 });
 </script>";
     }

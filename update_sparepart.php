@@ -9,24 +9,26 @@
 </head>
 <body>
 <?php
-     require_once "connect.php";
+    require_once "connect.php";
     session_start();
     
-    $id_book = $_POST['id_book'];
-    $status = $_POST['status'];
-    $check = "SELECT * FROM booking WHERE id_book='".$id_book."'";
+    $id_sparepart = $_POST['id_sparepart'];
+    $nama_sparepart = $_POST['nama_sparepart'];
+    $harga_sparepart = $_POST['harga_sparepart'];
+    
+    $check = "SELECT * FROM sparepart WHERE id_servis='".$id_sparepart."'";
     $hasil = mysqli_query($db, $check);
-    $query="UPDATE booking SET 
-    status='".$status."' WHERE id_book = '".$id_book."'";
+    $query="UPDATE sparepart SET 
+    nama_sparepart='".$nama_sparepart."',harga_sparepart='".$harga_sparepart."' WHERE id_sparepart = '".$id_sparepart."'";
     if (mysqli_query($db,$query)) {
               echo "<script>
 swal({
     title: \"Update Sukses!\",
-    text: \"Update Berhasil\",
+    text: \"Update $id_sparepart Berhasil\",
     type: \"success\"
 },
 function () {
-    window.location.href = 'profile.php';
+    window.location.href = 'menuservis.php';
 });
 </script>";
     } else {
@@ -37,7 +39,7 @@ swal({
     type: \"error\"
 },
 function () {
-    window.location.href = 'profile.php';
+    window.location.href = 'menuservis.php';
 });
 </script>";
     }

@@ -12,7 +12,7 @@ if (mysqli_connect_errno()) {
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <title>Parallax Template - Materialize</title>
+    <title>Hero Sakti Motor Gemilang Website By Materialize</title>
 
     <!-- CSS  -->
         
@@ -26,58 +26,59 @@ if (mysqli_connect_errno()) {
     <div class="container">
     <form method="POST" action="prosesbook.php" class="col s12">
             <?php
-            echo "<h1> Detail Booking Kostumer </h1> "
+            echo "<h1> Detail Booking Kostumer </h1> ";
+                $no_book = $_POST['no_book'];
+                $_SESSION['no_book'] =   $_POST['no_book'];
+                $id_servis = $_POST['id_servis'];
+                $_SESSION['id_servis'] = $_POST['id_servis'];
+                $id_sparepart = $_POST['id_sparepart'];
+                $_SESSION['id_sparepart'] = $_POST['id_sparepart'];
             ?>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input value="<?php echo $_SESSION['id_book'];?>" id="id_book" type="text" class="validate" name="id_book" readonly>
-                        <label class="active" for="id_book">Booking Number</label>
+                        <input value="<?php echo "$no_book";?>" id="no_book" type="text" class="validate" name="no_book" readonly>
+                        <label class="active" for="no_book">Booking Number</label>
                     </div>
-                    <div class="input-field col s6">
-                        <input value="<?php echo "" . date("l") . ""; ?>" id="hari" type="text" class="validate" name="tanggal" length="12" readonly>
-                        <label class="active" for="hari">Hari</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input value="<?php echo "" . date("d-m-Y") . ""; ?>" id="tanggal" type="text" class="validate" name="tanggal" length="12" readonly>
-                        <label class="active" for="tanggal">Tanggal</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <select name="servis">
-                            <?php 
-                                $konek = mysqli_connect("localhost","root","","suzuki");
-                                $query = "select id_servis,jenis_servis from servis";
-                                $hasil = mysqli_query($konek,$query);  
-                                    if (mysqli_num_rows($hasil) > 0) {
-                                        while($data=mysqli_fetch_array($hasil)){
-                                        echo "<option value='$data[id_servis]'>$data[jenis_servis]</option>";
-                                        }
-                                            }else{
-                                            echo "<option value='0'>Data servis Tidak Ada</option>";
-                                        }       
-                            ?>
-                        </select>
-                        <label>Jasa Servis</label>
+                    
+                    <div class="input-field col s12 ">
+                        <input value="<?php echo "$id_servis"; ?>" id="id_servis" type="text" class="validate" name="id_servis" length="12" readonly>
+                        <label class="active" for="id_servis">ID Servis</label>
                     </div>        
-                    <div class="input-field col s12">
-                        <select multiple name="sparepart[]">
-                        <?php
-                            require_once "connect.php";
-                            $query = "select * from sparepart";
-                            $hasil = mysqli_query($db, $query);
-                                if (mysqli_num_rows($hasil)>0){
-                                    while($data=mysqli_fetch_array($hasil)){
-                                         echo "<option value='".$data[id_sparepart]."'>$data[nama_sparepart]</option>";
-                                        }
-                                            }else{
-                                            echo "<option value='Tidak Ada Sparepart Yang diganti'></option>";
-                                        }
-                           
-                            
-                        ?>
-                            </select>
-                        
-                       <label>Pergantian Sparepart</label>
+                    <div class=" input-field col s12">
+                    <input id="harga_servis" value="<?php
+                            $konek = mysqli_connect("localhost","root","","suzuki");
+                            $query = "select harga_servis from servis where id_servis = '".$id_servis."'";
+                            $hasil = mysqli_query($konek,$query);
+                            if (mysqli_num_rows($hasil) > 0) {
+                            while($data=mysqli_fetch_array($hasil)){
+                                echo "$data[harga_servis]";
+                            }
+                                }else{
+                                echo "Data Servis Kosong";
+                            }       
+                        ?>" type="number" class="validate" name="harga_servis" readonly>
+                        <label for="harga_servis">Harga Servis</label>
                     </div>
+                    <div class="input-field col s12">
+                        <input value="<?php echo "$id_sparepart"; ?>" id="id_sparepart" type="text" class="validate" name="id_sparepart" length="12" readonly>
+                        <label class="active" for="id_sparepart">ID Sparepart</label>
+                    </div>        
+                    <div class=" input-field col s12">
+                     <input id="harga_sparepart" value="<?php
+                            $konek1 = mysqli_connect("localhost","root","","suzuki");
+                            $query1 = "select harga_sparepart from sparepart where id_sparepart = '".$id_sparepart."'";
+                            $hasil1 = mysqli_query($konek1,$query1);
+                            if (mysqli_num_rows($hasil1) > 0) {
+                            while($data1=mysqli_fetch_array($hasil1)){
+                                echo "$data1[harga_sparepart]";
+                            }
+                                }else{
+                                echo "Data Sparepart Sparepart";
+                            }       
+                        ?>" type="number" class="validate" name="harga_sparepart" readonly>
+                        <label for="harga_sparepart">Harga Sparepart</label>
+                    </div>
+                            <!-- <button value="Submit" name="Submit" type="submit" href="prosesbook.php">Tambah Sparepart</button> -->
         </div>
                     <button value="Submit" name="Submit" type="submit" class="waves-effect waves-green right btn">Submit</button>
         </form>
@@ -93,8 +94,10 @@ if (mysqli_connect_errno()) {
 $(document).ready(function(){
         $('ul.tabs').tabs();
     $('select').material_select();
+    
     $('.tooltipped').tooltip({delay: 50});
     });
 </script>
+    
     </body>
 </html>

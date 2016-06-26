@@ -11,7 +11,6 @@
 <?php
      require_once "connect.php";
     session_start();
-    
     $id_book = $_POST['id_book'];
     $status = $_POST['status'];
     $check = "SELECT * FROM booking WHERE id_book='".$id_book."'";
@@ -26,7 +25,7 @@ swal({
     type: \"success\"
 },
 function () {
-    window.location.href = 'profile.php';
+    window.location.href = 'menuservis.php';
 });
 </script>";
     } else {
@@ -37,7 +36,7 @@ swal({
     type: \"error\"
 },
 function () {
-    window.location.href = 'profile.php';
+    window.location.href = 'menuservis.php';
 });
 </script>";
     }

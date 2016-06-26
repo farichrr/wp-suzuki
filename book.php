@@ -26,7 +26,7 @@
                 type: \"success\"
                 },
             function () {
-            window.location.href = 'home1.php';
+            window.location.href = 'home.php';
                 });
                 </script>";
         exit();

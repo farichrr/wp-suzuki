@@ -91,7 +91,8 @@
                   <div class="collapsible-header"><i class="material-icons">description</i>Lihat Servis</div>
                   <div class="collapsible-body">
                       <p>Menu untuk melihat simulasi kredit motor yang tersedia.</p>
-                    <p><a href="#modal1" class="btn-large modal-trigger">Lihat<i class="material-icons right">description</i></a></p>
+                    <p><a href="#modal7" class="btn-large modal-trigger">Lihat Servis<i class="material-icons right">description</i></a>
+                      <a href="#modal8" class="btn-large modal-trigger">Detil Servis<i class="material-icons right">description</i></a></p>
                   </div>
             </li>
             </ul>
@@ -302,6 +303,82 @@
         </div>
     </div>
 </div>
+    <!--modal structure-->
+    <div id="modal7" class="modal">
+    <div class="modal-content">
+        <h4>Lihat Servis</h4>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="col s12">
+                        <table class="highlight centered">
+        <thead>
+          <tr>
+              <th data-field="id_book">No Booking</th>
+              <th data-field="tanggal">Tanggal</th>
+              <th data-field="nopol">No. Polisi</th>
+              <th data-field="jam">jam</th>
+              <th data-field="status">status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <?php
+                require_once "connect.php";
+    
+                $sql = "SELECT id_book,tanggal,nopol,jam,status FROM booking WHERE ktp='".$_SESSION['ktp']."'";
+                $result = mysqli_query($db, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>
+                    <td>".@$row['id_book']."</td>  
+                    <td>".@$row['tanggal']."</td>
+                    <td>".@$row['nopol']."</td>
+                    <td>".@$row['jam']."</td>
+                    <td>".@$row['status']."</td>
+                    </tr>";
+                    }
+                } else {
+                    echo "Data Kendaraan Tidak Ada atau Tidak ditemukan";
+            } ?>
+          
+        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+     <!--modal structure-->
+    <div id="modal8" class="modal">
+    <div class="modal-content">
+        <h4>Detil Servis Kendaraan</h4>
+        <div class="row">
+            <form class="col s12" action="detail_servis_user.php" method="post">
+                    <select name="id_book">
+                        <?php
+                            $konek = mysqli_connect("localhost","root","","suzuki");
+                            $query = "select id_book from booking where ktp=".$_SESSION['ktp']."";
+                            $hasil = mysqli_query($konek,$query);
+                            if (mysqli_num_rows($hasil) > 0) {
+                            while($data=mysqli_fetch_array($hasil)){
+                                echo "<option value=$data[id_book]>$data[id_book]</option>";
+                            }
+                                }else{
+                                echo "<option value=0>Data Kendaraan Tidak Ada</option>";
+                            }       
+                        ?>
+                        </select>
+                        <label>NO Book</label>
+                <button class="btn waves-effect waves-light" type="submit"><i class="material-icons right">info</i>Lihat</button>
+        </form>
+        </div>
+    </div>
+</div>
+    
 <footer class="page-footer teal">
     <div class="container">
         <div class="row">
@@ -357,14 +434,6 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
-<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a href="#modal7" class="btn-floating btn-large red modal-trigger">
-        <i class="large material-icons tooltipped" data-position="left" data-delay="50" data-tooltip="Track History Motorcycle by License Plate">search</i>
-    </a>
-    <ul>
-        <li><a href="mailto:farichrr@gmail.com?Subject=Hello%20Developer" target="_top" class="btn-floating blue"><i class="material-icons tooltipped" data-position="left" data-delay="50" data-tooltip="Contact Developer">perm_identity</i></a></li>
-    </ul>
-</div>
 
     
 <script>

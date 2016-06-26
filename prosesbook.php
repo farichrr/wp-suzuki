@@ -3,30 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <!-- CSS  -->
-    <script src="js/sweetalert-dev.js"></script>
-    <link rel="stylesheet" href="css/sweetalert.css">
-    <link href="css/custom.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 
-    
-<?php
+   <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "suzuki";
+$harga_servis = $_POST['harga_servis'];
+$harga_sparepart = $_POST['harga_sparepart'];
+    $no_book = $_POST['no_book'];
+                $_SESSION['no_book'] =   $_POST['no_book'];
+                $id_servis = $_POST['id_servis'];
+                $_SESSION['id_servis'] = $_POST['id_servis'];
+                $id_sparepart = $_POST['id_sparepart'];
+                $_SESSION['id_sparepart'] = $_POST['id_sparepart'];
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "INSERT INTO detail_book (id_book, id_servis, harga_servis, id_sparepart, harga_sparepart)
+VALUES ('".$_SESSION['no_book']."','".$_SESSION['id_servis']."' , '".$harga_servis."','".$_SESSION['id_sparepart']."','".$harga_sparepart."')";
+
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?> 
+<!--
+
     session_start();
     require_once "connect.php";
-    $servis = $_POST['servis'];
-    $sparepart = $_POST['sparepart']; 
-    if ($_POST['Submit']=='Submit')
-    {
-    for ($i=0; $i<sizeof($sparepart); $i++){
-        $query="INSERT INTO detail_book (id_book,id_servis,id_sparepart) values ('".$_SESSION['id_book']."','".$servis."','".$sparepart[$i]."')";
+    print_r($_POST);
+    $no_book = $_POST['no_book'];
+    $servis = $_POST['id_servis'];
+    $sparepart = $_POST['id_sparepart']; 
+    $harga_servis = $_POST['harga_servis'];
+    $harga_sparepart = $_POST['harga_sparepart'];    
+    $query="INSERT INTO detail_book (id_book,id_servis,harga_servis,id_sparepart,harga_sparepart) values ('$no_book','$servis','$harga_servis','$sparepart','$harga_sparepart') where detail_book.id_book='".$no_book."'";
+                                 
          if (mysqli_query($db, $query)) {
-    
-    echo "record is inserted";
-             } else {
-             echo "gagal";
-         }
-    }
-    }
+    echo "berhasil";
+        exit();
+             } else { echo "gagal";     
+
+}
     
           
     //$nama_sparepart = "Select nama_sparepart from sparepart where id_sparepart = '".$sparepart."'";
@@ -56,11 +84,12 @@
                 });
                     </script>";     
 
-    }
-print_r($_POST);
+    }*/
+
 
 mysqli_close($db);
-*/
+
 ?>
+-->
     </body>
 </html>

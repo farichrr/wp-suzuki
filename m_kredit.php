@@ -36,7 +36,7 @@ session_start();
     </ul>
     <nav class="white   ">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="admin.php" class="brand-logo"><img  class="img-rounded" src="img/logo.png" alt="suzuki.png"></a>
+      <a id="logo-container" href="#" class="brand-logo"><img  class="img-rounded" src="img/logo.png" alt="suzuki.png"></a>
         
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
