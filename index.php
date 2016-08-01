@@ -307,7 +307,7 @@ infowindow.open(map,marker);
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="ktp" type="number" class="validate" length="15" name="ktp" size="15" required autofocus>
-                        <label for="ktp">NIK</label>
+                        <label for="ktp">Nomor KTP</label>
                     </div>
                     <div class="input-field col s6">
                         <input id="nama" type="text" class="validate" size="30" name="nama">
